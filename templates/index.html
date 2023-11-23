@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevGUI: Meu Mundo Full Stack</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
+  
+  
+
+</head>
+<body>
+    
+  <header class="header">
+   <!-- <img class="logo" src="images/Dev.png" alt="">-->
+
+
+
+    <section class="logo-body">
+        
+        
+        <a class="aa" href=""><div class="logo"> DevGUI</h3> </div></a>
+        
+        
+    </section>
+
+
+
+
+    <nav>
+        <a href="">Home</a>
+        <a id="projetos" href="#">Projetos</a>
+        <a id="contato" href="#">Contato</a>
+        <a href="#">Sobre-mim</a>
+        <a href="login"><button>Login</button></a>
+        <a href="cadastre-se"><button>Cadastre-se</button></a>
+    </nav>
+    <!--<div class="head">
+      <h3 class="h3"><a href="">Home</a></h3>
+      <h3 class="h3"><a href="">Projetos</a></h3>
+      <h3 class="h3"><a href="">Contato</a></h3>
+      <h3 class="h3"><a href="">Sobre-mim</a></h3>
+    </div>-->
+  </header>
+
+  <section class="conteiner">
+    <div class="dentro">
+      <img src="{{ url_for('static', filename='images/eu.jpg') }}" alt="">
+    </div>
+
+    <div class="guiii">
+      <div class="ff"><h1 class="text-item">Olá eu sou o Guilherme!</h1></div>
+      <br></br>
+      
+      <div class="te">
+        <p><h3>Desenvolvedor FullStack</h3></p>
+        <p><h3>Amo programação e resolver problemas!</h3></p>
+        
+      </div>
+    </div>
+
+  </section>
+
+  <section id="projetosSection">
+    <h2>Nossos Projetos</h2>
+    <div class="projects">
+        <div class="project">
+            <img src="https://dkrn4sk0rn31v.cloudfront.net/uploads/2020/11/consumindo-api-python.png" alt="Projeto 1">
+            <div class="project-info">
+                <h3>API Registro de Usuário</h3>
+                <br>
+                <p><h5>Api criada com Flask para registrar usuario do proximo projeto!</h5></p>
+                <br>
+                <div>
+                    <a href="https://github.com/DevGuilhermeg/user-registration-api" target="_blank"><button>GitHub</button></a>
+                    
+                    <button>Abrir</button>
+                </div>
+            </div>
+        </div>
+        <div class="project">
+            <img src="{{ url_for('static', filename='images/em-breve.jfif') }}" alt="Projeto 2">
+            <div class="project-info">
+                <h3>Projeto 2</h3>
+                <p><h5>Em breve novos projetos</h5></p>
+            </div>
+        </div>
+        <div class="project">
+          <img src="{{ url_for('static', filename='images/em-breve.jfif') }}" alt="Projeto 2">
+          <div class="project-info">
+              <h3>Projeto 3</h3>
+              <p><h5>Em breve novos projetos</h5></p>
+          </div>
+      </div>
+        <!-- Repita o bloco .project para cada projeto -->
+    </div>
+</section>
+<section class="formaca">
+    <h2>Minhas Formações</h2>
+    <div class="formacoes">
+        <div class="formacao">
+            <img src="{{ url_for('static', filename='images/python.png') }}" alt="Python">
+            <div class="formacao-info">
+                <h3>Python</h3>
+                <p>Desenvolvimento Web com Python e Django</p>
+            </div>
+        </div>
+        <div class="formacao">
+            <img src="{{ url_for('static', filename='images/html.png') }}" alt="HTML">
+            <div class="formacao-info">
+                <h3>HTML 5</h3>
+                <p>Curso Avançado de HTML5</p>
+            </div>
+        </div>
+        <div class="formacao">
+            <img src="{{ url_for('static', filename='images/css3.png') }}" alt="CSS">
+            <div class="formacao-info">
+                <h3>CSS 3</h3>
+                <p>Mastering CSS Layouts</p>
+            </div>
+        </div>
+        
+        <div class="formacao">
+            <img src="{{ url_for('static', filename='images/js5.png') }}" alt="JavaScript">
+            <div class="formacao-info">
+                <h3>JavaScript 5</h3>
+                <p>JavaScript Moderno e Frameworks</p>
+            </div>
+        </div>
+
+        
+    </div>
+</section>
+<section id="contato" class="contat">
+    <h2>Entre em Contato</h2>
+    <div class="form-contato">
+        <form id="formContato">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+
+<footer>
+    <p>&copy; 2023 Dev Gui. Todos os direitos reservados.</p>
+</footer>
+
+
+
+</body>
+</html>

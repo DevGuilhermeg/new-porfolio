@@ -65,8 +65,8 @@ nav {
 nav a {
   text-decoration: none;
   color: #fff;
-  font-size: 18px;
-  margin: 0 20px;
+  font-size: 14px;
+  margin: 0 10px;
   position: relative;
 }
 
@@ -205,13 +205,19 @@ h3{
     margin: 5px;
 }
 
-
-
+.links img {
+  
+  width: 30px;
+  height: 30px;
+  margin: 8px;
+  
+}
 
 /* Aplica a animação aos itens de texto */
 .text-item {
     overflow: hidden; /* Garante que o texto não apareça antes da animação */
     white-space: nowrap; /* Evita quebras de linha */
+    
     margin: 0 auto; /* Centraliza o texto no contêiner */
     position: relative; /* Adiciona posição relativa para posicionar o cursor */
     animation: typing 2s steps(40, end) forwards;

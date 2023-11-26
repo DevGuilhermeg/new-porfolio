@@ -67,22 +67,39 @@ def cadastro():
 
 @app.route('/cadastrar', methods=['POST'])
 def cadastrar():
-    # Obter os valores do formulário
-    nome = request.form.get('nameC')
-    email = request.form.get('emailC')
-    idade = request.form.get("idadeC")
-    senha = request.form.get('senhaC')
-
-    nome= "giuss"
-    email = 'Guiiii@gmail.com'
-    idade = 28
-    senha = "123"
-
-    dados = {"nome": nome, "email": email, "idade": int(idade), "senha": senha}
     try:
-        resposta = requests.post(url_cadastrar, json=dados, verify=True)
+        # Obter os valores do formulário
+        nome = request.form.get('nome')
+        email = request.form.get('email')
+        idade = request.form.get('idade')
+        senha = request.form.get('senha')
+
+        # Verificar se o e-mail já existe
+        url_verificar_email = f'https://api-usuarios-tvdy.onrender.com/pessoas/email/{email}'
+        resposta_verificacao = requests.get(url_verificar_email)
+
+        if resposta_verificacao.status_code == 200:
+            # Se o e-mail já existe, informe ao usuário
+            return "E-mail já cadastrado. Escolha outro e-mail."
+
+        # Dados de cadastro em formato JSON
+        dados_cadastro = {'nome': nome, 'email': email, 'idade': idade, 'senha': senha}
+
+        # Fazendo a requisição POST para o endpoint de cadastro com os dados em JSON
+        resposta = requests.post(url_pessoas, json=dados_cadastro, verify=True)
+
+        # Verificando o status da resposta
+        if resposta.status_code == 200:
+            # Redirecionar para a página principal ou outra página após o cadastro bem-sucedido
+            return redirect(f'/?email={email}')
+        else:
+            return f"Falha no cadastro. Código de status: {resposta.status_code}. Resposta: {resposta.text}"
 
     except Exception as e:
-        print(f"Erro durante a requisição POST: {str(e)}")
+        # Adicione um log para registrar a exceção
+        app.logger.error(f"Erro durante o cadastro: {str(e)}")
+        return f"Falha no cadastro. Erro interno do servidor: {str(e)}", 500
+
+
 if __name__ == '__main__':
     app.run(debug=True)

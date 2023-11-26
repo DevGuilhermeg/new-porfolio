@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu WebSite - clone danki</title>
-  <link rel="stylesheet" href="style-login.css">
-  <link rel="stylesheet" href="texte.css">
+  <title>DevGUI: Meu Mundo Full Stack</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
 </head>
 <body>
     
@@ -17,45 +17,31 @@
    <section class="logo-body">
         
         
-    <a class="aa" href="index.html"><div class="logo"> DevGUI</h3> </div></a>
+    <a class="aa" href="/"><div class="logo"> DevGUI</h3> </div></a>
     
     
 </section>
 
-
-
-    <!--<nav>
-        <a href="#">Home</a>
-        <a id="projetos" href="#">Projetos</a>
-        <a id="contato" href="#">Contato</a>
-        <a href="#">Sobre-mim</a>
-        <a href=""><button>Login</button></a>
-        <a href=""><button>Cadastre-se</button></a>
-    </nav>
-    <!--<div class="head">
-      <h3 class="h3"><a href="">Home</a></h3>
-      <h3 class="h3"><a href="">Projetos</a></h3>
-      <h3 class="h3"><a href="">Contato</a></h3>
-      <h3 class="h3"><a href="">Sobre-mim</a></h3>
-    </div>-->
   </header>
 
   <section class="conteiner">
     <div class="dentro">
-      <img src="images/eu.jpg" alt="">
+      <img src="{{ url_for('static', filename='images/eu.jpg') }}" alt="">
     </div>
 
     <div class="guiii">
       <div class="ff"><h1 class="text-item">Login</h1></div>
-      <br></br>
-      
-      <div class="te">
-        <input type="email" name="email" id="email">
-        <input type="password" name="senha" id="senha">
-        <button class="log">Logar</button>
-        <h4>Ou</h4>
-        <a href="cadastre-se.html"><button class="cad">Cadastre-se</button></a>
-      </div>
+        <br></br>
+        <form method="POST" action="/fazer-login">
+          <div class="te">
+            <input type="email" name="email" id="email">
+            <input type="password" name="senha" id="senha">
+            <a href="fazer-login"><button class="log">Logar</button></a>
+            <h4>Ou</h4>
+            <a href="cadastre-se.html"><button class="cad">Cadastre-se</button></a>
+          </div>
+        </form>
+      </div>      
     </div>
 
   </section>

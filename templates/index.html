@@ -1,40 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DevGUI: Meu Mundo Full Stack</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
   
-  
-
 </head>
 <body>
     
   <header class="header">
-   <!-- <img class="logo" src="images/Dev.png" alt="">-->
-
-
-
+  
     <section class="logo-body">
-        
-        
-        <a class="aa" href=""><div class="logo">DevGUI</h3> </div></a>
-        
-        
+
+        <a class="aa" href=""><div class="logo">DevGUI</div></a>
+
     </section>
 
-
-
-
     <nav>
-        <a href="">Home</a>
-        <a id="projetos" href="#">Projetos</a>
-        <a id="contato" href="#">Contato</a>
+        <a href="#">Home</a>
+        <a id="projetos" href="#projetosSection">Projetos</a>
+        <a id="contato" href="#contato">Contato</a>
         <a href="#">Sobre-mim</a>
         <a href="login"><button>Login</button></a>
-        <a href="cadastre-se"><button>Cadastre-se</button></a>
+        <a href="cadastro"><button>Cadastre-se</button></a>
     </nav>
     
   </header>
@@ -45,40 +36,68 @@
     </div>
 
     <div class="guiii">
-      <div class="ff"><h1 class="text-item">{{nome}}</h1></div>
-      <br></br>
-      <p><h3>Desenvolvedor FullStack que encontra fascínio na complexidade dos códigos e na resolução de desafios. Estou animado para conversar contigo sobre como minha paixão pela programação e meu conjunto de habilidades podem contribuir de forma única para a equipe. Vamos explorar juntos!</h3></p>
-      <div class="links">
-      <br></br>
-      <a href="https://github.com/DevGuilhermeg" target="_blank"><img src="{{ url_for('static', filename='images/github.png')}}" alt=""></a>
-      <a href="https://www.linkedin.com/seu-perfil-link" target="_blank"><img src="{{ url_for('static', filename='images/linkedin.jpeg')}}" alt=""></a>
-      <a href="mailto:netmultiverso@gmail.com" target="_blank"><img src="{{ url_for('static', filename='images/e-mail.png')}}" alt=""></a>
-      <a href="https://wa.me/5511940431906" target="_blank"><img src="{{ url_for('static', filename='images/whatsapp.png')}}" alt=""></a>
-        
-      </div>
-        
-      
+        <div class="ff"><h1 class="text-item">{{nome}}</h1></div>
+        <div>
+            <br></br>
+            <p><h3>Desenvolvedor FullStack que encontra fascínio na complexidade dos códigos e na resolução de desafios. Estou animado para conversar contigo sobre como minha paixão pela programação e meu conjunto de habilidades podem contribuir de forma única para a equipe. Vamos explorar juntos!</h3></p>
+        </div>
+
+        <div class="links">
+            <br>
+            <a href="https://github.com/DevGuilhermeg" target="_blank"><img src="{{ url_for('static', filename='images/github.png')}}" alt=""></a>
+            <a href="https://www.linkedin.com/seu-perfil-link" target="_blank"><img src="{{ url_for('static', filename='images/linkedin.jpeg')}}" alt=""></a>
+            <a href="mailto:netmultiverso@gmail.com" target="_blank"><img src="{{ url_for('static', filename='images/e-mail.png')}}" alt=""></a>
+            <a href="https://wa.me/5511940431906" target="_blank"><img src="{{ url_for('static', filename='images/whatsapp.png')}}" alt=""></a>
+        </div>  
+    </div>
     </div>
 
   </section>
 
   <section id="projetosSection">
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="fecharModal()">&times;</span>
+          <div class="modal-TD">
+            <h2 id="projetoTitulo"></h2>
+            <p id="projetoDescricao"></p>
+            <div id="container"></div>
+          </div>
+          <div class="modal-buttons">
+            <button id="botaoAbrirProjeto1" style="display: none" onclick="abrirProjetoEspecifico()"><a href="https://api-usuarios-tvdy.onrender.com/pessoas" target="_blank">Abrir</a></button>
+            <button id="botaoCadastroProjeto1" style="display: none" onclick="cadastrarProjetoEspecifico()"><a href="cadastro">Cadastrar</a></button>
+            <button id="botaoLoginProjeto1" style="display: none" onclick="loginProjetoEspecifico()"><a href="login">Login</a></button>
+      
+            <button id="botaoProjeto2" style="display: none" onclick="abrirProjetoEspecifico()">Abrir</button>
+            <button id="botaoCadastroProjeto2" style="display: none" onclick="cadastrarProjetoEspecifico()">Cadastrar</button>
+            <button id="botaoLoginProjeto2" style="display: none" onclick="loginProjetoEspecifico()">Login</button>
+      
+            <button id="botaoProjeto3" style="display: none" onclick="abrirProjetoEspecifico()">Abrir</button>
+            <button id="botaoCadastroProjeto3" style="display: none" onclick="cadastrarProjetoEspecifico()">Cadastrar</button>
+            <button id="botaoLoginProjeto3" style="display: none" onclick="loginProjetoEspecifico()">Login</button>
+          </div> 
+        </div>
+      </div>
+      
     <h2>Nossos Projetos</h2>
     <div class="projects">
+
         <div class="project">
-            <img src="https://dkrn4sk0rn31v.cloudfront.net/uploads/2020/11/consumindo-api-python.png" alt="Projeto 1">
+
+            <img src="{{ url_for('static', filename='images/API.png') }}" alt="Projeto 1">
             <div class="project-info">
                 <h3>API Registro de Usuário</h3>
                 <br>
-                <p><h5>Api criada com Flask para registrar usuario do proximo projeto!</h5></p>
+                <p><h5>Api criada com Flask para registrar usuário do próximo projeto!</h5></p>
                 <br>
                 <div>
                     <a href="https://github.com/DevGuilhermeg/user-registration-api" target="_blank"><button>GitHub</button></a>
-                    
-                    <button>Abrir</button>
+                    <button onclick="abrirProjeto('API Registro de Usuário', 'API de Cadastro de Pessoas: Agora online, nossa API permite gerenciar usuários. Listar, cadastrar, excluir e fazer login são operações disponíveis. Os botões para abrir, cadastrar e fazer login estão abaixo. Explore as funcionalidades para interagir com facilidade.')">Abrir</button>
                 </div>
             </div>
         </div>
+
         <div class="project">
             <img src="{{ url_for('static', filename='images/em-breve.jfif') }}" alt="Projeto 2">
             <div class="project-info">
@@ -86,16 +105,17 @@
                 <p><h5>Em breve novos projetos</h5></p>
             </div>
         </div>
+
         <div class="project">
-          <img src="{{ url_for('static', filename='images/em-breve.jfif') }}" alt="Projeto 2">
+          <img src="{{ url_for('static', filename='images/em-breve.jfif') }}" alt="Projeto 3">
           <div class="project-info">
               <h3>Projeto 3</h3>
               <p><h5>Em breve novos projetos</h5></p>
           </div>
       </div>
-        <!-- Repita o bloco .project para cada projeto -->
+        
     </div>
-</section>
+  </section>
 <section class="formaca">
     <h2>Minhas Formações</h2>
     <div class="formacoes">
@@ -153,7 +173,7 @@
 <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 
 <footer>
-    <p>&copy; 2023 Dev Gui. Todos os direitos reservados.</p>
+    <p>&copy; 2023 DevGUI. Todos os direitos reservados.</p>
 </footer>
 
 

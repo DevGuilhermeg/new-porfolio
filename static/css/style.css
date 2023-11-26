@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 @keyframes anim1{
     from{background-color: rgb(255,49,49);width: 50%;height: 50px;}
@@ -107,10 +108,11 @@ nav a:hover::after {
   
 }
 
-.aa {
-  text-decoration: none;
-}
 
+a {
+  text-decoration: none;
+  color: #fff;
+}
 /* fim do logo */
 
 h1{
@@ -120,15 +122,10 @@ h1{
     
 }
 .head{
-    
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin: 15%;
-    
-
-
-    
+    margin: 15%;    
 }
 .h3{
     margin: 5px;
@@ -146,12 +143,66 @@ h1{
     animation-name: anim11;
     animation-duration: 7s;
     animation-iteration-count: 1;
-    
     margin: 5%;
 }
 /* Estilos para telas de PC */
 @media only screen and (min-width: 768px) {
     /* Seus estilos para telas de PC aqui */
+  }
+  .modal {
+    display: none;
+   
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+  }
+  .modal-TD h2 {
+    margin: 20px;
+    color: #2ecc71;
+  }
+  
+  .modal-content {
+    justify-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px; /* ajustar conforme necessário */
+    padding: 20px;
+    background-image: url('../images/fundo.avif');
+  }
+
+  .modal-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+
+  }
+  
+  
+  .modal-buttons button:not(:last-child) {
+    margin-right: 10px;
+  }
+  
+  .cadastro {
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .cadastro1 {
+    display: flex;
+    
+  }
+
+  h3, input {
+    justify-items: center;
+    margin: 0 10px;
   }
 
 .conteiner{
@@ -176,6 +227,12 @@ h1{
     
     justify-content: space-around;
 }
+.aling {
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  justify-content: space-around;
+}
 .guiii{
     width: 65%;
     height: 300px;
@@ -193,14 +250,7 @@ img{
     height: 280px;
     
 }
-.te{
-    padding: 5px;
-    margin: 1px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-}
+
 h3{
     margin: 5px;
 }
@@ -392,4 +442,14 @@ footer {
   padding: 20px 0;
   background-color: #333;
   color: #fff;
+}
+
+
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
 }

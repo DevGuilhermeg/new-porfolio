@@ -1,1 +1,80 @@
-<h1>gui</h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevGUI: Meu Mundo Full Stack</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style-cadastro.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
+</head>
+<body>
+    
+  <header class="header">
+
+    <section class="logo-body">        
+        
+      <a class="aa" href="/"><div class="logo"> DevGUI</h3> </div></a>
+      
+    </section>
+
+  </header>
+
+  <section class="conteiner">
+    <div class="dentro">
+      <img src="{{ url_for('static', filename='images/eu.jpg') }}" alt="">
+    </div>
+
+    <div class="guiii">
+      <div class="ff"><h1 class="text-item">Cadastre-se</h1></div>
+        <br></br>
+        
+          <div class="te">
+            <div class="cadastro">
+              <form method="POST" action="/cadastrar">
+                <div class="cadastro1">
+                  <h3>Nome:</h3>
+                  <input type="name" name="nameC" id="name">
+                </div>
+                
+                <div class="cadastro1">
+                  <h3>Email:</h3>
+                  <input type="email" name="emailC" id="email">
+                </div>
+                
+                <div class="cadastro1">
+                  <h3>Idade:</h3>
+                  <input type="name" name="idadeC" id="idade">
+                </div>
+                
+                <div class="cadastro1">
+                  <h3>Senha:</h3>
+                <input type="password" name="senhaC" id="senha">
+              </form>
+            </div>
+
+          </div>
+
+            <div class="aling">
+              <a href="cadastrar"><button class="log">Cadastrar</button></a>
+              
+            </div>
+          </form>
+          </div>
+        </form>
+        <div>
+          <h4>Ou</h4>
+          <br>
+          <a href="/"><button class="cad">Voltar</button></a>
+        </div>
+
+      </div>      
+    </div>
+
+  </section>
+
+  <footer>
+      <p>&copy; 2023 DevGUI. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>

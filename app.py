@@ -1,41 +1,59 @@
 from flask import Flask, render_template, request, redirect
+from flask_mail import Mail, Message
 import requests
-from tkinter import messagebox
 
 app = Flask(__name__)
 
+# Configurações do Flask-Mail (substitua com suas próprias configurações)
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_USERNAME'] = 'netmultiverso@gmail.com'
+app.config['MAIL_PASSWORD'] = 'jbus eqwl ohfu htud'
+
+
+mail = Mail(app)
 
 url_pessoas = 'https://api-usuarios-tvdy.onrender.com/pessoas'
-# URL da API para login
 url_login = 'https://api-usuarios-tvdy.onrender.com/login'
-url_cadastrar = 'https://api-usuarios-tvdy.onrender.com/pessoas'
-
 
 @app.route('/')
 def index():
-    # Obtenha o email do parâmetro na URL
     email = request.args.get('email')
     dados_usuario = None
     nome = "Recrutador"
     
-    # Se o email estiver presente, faça a solicitação à API para obter dados do usuário, se necessário
     if email:
         urlEmail = f'https://api-usuarios-tvdy.onrender.com/pessoas/email/{email}'
         resposta = requests.get(urlEmail)
 
         if resposta.status_code == 200:
-            # Aqui você pode usar os dados do usuário obtidos da API
             dados_usuario = resposta.json()
-            nome = (dados_usuario['pessoa']['nome'])
+            nome = dados_usuario['pessoa']['nome']
 
-            # ...
+    saudacao = f"Olá, {nome}! Guilherme aqui"
+    print(saudacao)
     
-    # Restante do código da rota /index
-    
-    saldaçao = f"Olá, {nome}! Guilherme aqui"
-    print(saldaçao)
-    
-    return render_template('index.html', nome=saldaçao)
+    return render_template('index.html', nome=saudacao)
+
+@app.route('/processa_formulario', methods=['POST'])
+def processa_formulario():
+    if request.method == 'POST':
+        nome = request.form['nome']
+        email = request.form['email']
+        mensagem = request.form['mensagem']
+
+        # Configurar e enviar e-mail
+        msg = Message('"ATENÇÃO NOVO RECRUTADOR"',
+                      sender='seu_email@example.com',
+                      recipients=['netmultiverso@gmail.com'])  # Substitua pelo seu endereço de e-mail
+        msg.body = f"Nome: {nome}\nE-mail: {email}\nMensagem:\n{mensagem}"
+
+        mail.send(msg)
+
+        # Redirecionar para uma página de sucesso
+        return render_template('index.html')
 
 @app.route('/login')
 def login():

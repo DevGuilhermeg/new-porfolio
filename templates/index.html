@@ -15,12 +15,12 @@
   
     <section class="logo-body">
 
-        <a class="aa" href=""><div class="logo">DevGUI</div></a>
+        <a class="aa" href="/"><div class="logo">DevGUI</div></a>
 
     </section>
 
-    <nav>
-        <a href="#">Home</a>
+    <nav class="headerr">
+        <a href="/">Home</a>
         <a id="projetos" href="#projetosSection">Projetos</a>
         <a id="contato" href="#contato">Contato</a>
         <a href="#">Sobre-mim</a>
@@ -45,7 +45,7 @@
         <div class="links">
             <br>
             <a href="https://github.com/DevGuilhermeg" target="_blank"><img src="{{ url_for('static', filename='images/github.png')}}" alt=""></a>
-            <a href="https://www.linkedin.com/seu-perfil-link" target="_blank"><img src="{{ url_for('static', filename='images/linkedin.jpeg')}}" alt=""></a>
+            <a href="https://www.linkedin.com/in/guilherme-gomes-291459293" target="_blank"><img src="{{ url_for('static', filename='images/linkedin.jpeg')}}" alt=""></a>
             <a href="mailto:netmultiverso@gmail.com" target="_blank"><img src="{{ url_for('static', filename='images/e-mail.png')}}" alt=""></a>
             <a href="https://wa.me/5511940431906" target="_blank"><img src="{{ url_for('static', filename='images/whatsapp.png')}}" alt=""></a>
         </div>  
@@ -93,7 +93,7 @@
                 <br>
                 <div>
                     <a href="https://github.com/DevGuilhermeg/user-registration-api" target="_blank"><button>GitHub</button></a>
-                    <button onclick="abrirProjeto('API Registro de Usuário', 'API de Cadastro de Pessoas: Agora online, nossa API permite gerenciar usuários. Listar, cadastrar, excluir e fazer login são operações disponíveis. Os botões para abrir, cadastrar e fazer login estão abaixo. Explore as funcionalidades para interagir com facilidade.')">Abrir</button>
+                    <button id="openModalBtn" onclick="abrirProjeto('API Registro de Usuário', 'API de Cadastro de Pessoas: Agora online, nossa API permite gerenciar usuários. Listar, cadastrar, excluir e fazer login são operações disponíveis. Os botões para abrir, cadastrar e fazer login estão abaixo. Explore as funcionalidades para interagir com facilidade.')">Abrir</button>
                 </div>
             </div>
         </div>
@@ -123,7 +123,7 @@
             <img src="{{ url_for('static', filename='images/python.png') }}" alt="Python">
             <div class="formacao-info">
                 <h3>Python</h3>
-                <p>Desenvolvimento Web com Python e Django</p>
+                <p>Desenvolvimento Web com Python e Flask</p>
             </div>
         </div>
         <div class="formacao">
@@ -145,7 +145,7 @@
             <img src="{{ url_for('static', filename='images/js5.png') }}" alt="JavaScript">
             <div class="formacao-info">
                 <h3>JavaScript 5</h3>
-                <p>JavaScript Moderno e Frameworks</p>
+                <p>JavaScript Moderno</p>
             </div>
         </div>
 
@@ -155,7 +155,9 @@
 <section id="contato" class="contat">
     <h2>Entre em Contato</h2>
     <div class="form-contato">
-        <form id="formContato">
+        <form action="{{ url_for('processa_formulario') }}" method="post">
+            
+
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
 

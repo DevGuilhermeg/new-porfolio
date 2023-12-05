@@ -55,7 +55,7 @@ function abrirProjeto(titulo, descricao,) {
       document.getElementById('botaoProjeto2').style.display = 'none';
       document.getElementById('botaoProjeto3').style.display = 'block';
     }
-  }
+  };
   
   function fecharModal() {
     // Fechar o modal
@@ -83,3 +83,39 @@ window.onclick = function(event) {
       fecharModal();
     }
   }
+  // Adicione um ouvinte de evento para o evento de rolagem
+  window.addEventListener("scroll", function() {
+    var nav = document.querySelector('.headerr');
+    var buttonSignIn = this.document.querySelector('.button-sign-in')
+    
+    // Verifica se a posição vertical da barra de rolagem é maior que 0
+    if (window.scrollY > 150) {
+      nav.classList.add('fixed'); // Adiciona a classe 'fixed'
+      buttonSignIn.classList.add('none')
+    } else {
+      nav.classList.remove('fixed'); // Remove a classe 'fixed'
+      buttonSignIn.classList.remove('none')
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const openModalBtn = document.getElementById('openModalBtn');
+    const modal = document.querySelector('.modal');
+  
+    openModalBtn.addEventListener('click', function () {
+      modal.style.display = 'block';
+      modal.classList.add('fade-in'); // Adiciona a classe para a animação
+  
+      // Adiciona uma classe 'modal-open' ao body para evitar que o conteúdo por trás do modal seja clicado
+      document.body.classList.add('modal-open');
+    });
+  
+    const closeModalBtn = document.querySelector('.close');
+    closeModalBtn.addEventListener('click', function () {
+      modal.style.display = 'none';
+      modal.classList.remove('fade-in'); // Remove a classe para a animação
+  
+      // Remove a classe 'modal-open' ao body quando o modal é fechado
+      document.body.classList.remove('modal-open');
+    });
+  });

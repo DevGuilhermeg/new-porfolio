@@ -151,10 +151,7 @@ h1{
     animation-iteration-count: 1;
     margin: 5%;
 }
-/* Estilos para telas de PC */
-@media only screen and (min-width: 768px) {
-    /* Seus estilos para telas de PC aqui */
-  }
+
   .modal {
     display: none;
     position: fixed;
@@ -243,7 +240,6 @@ h1{
 
 .conteiner{
     width: 90%;
-    height: 400px;
     background-color: rgb(0, 0, 0);
     display: flex;
     flex-direction: row ;
@@ -271,7 +267,6 @@ h1{
 }
 .guiii{
     width: 65%;
-    height: 300px;
     padding: 20px;
     background-color: rgb(42, 122, 42);
     display: flex;
@@ -479,4 +474,81 @@ footer {
   right: 10px;
   font-size: 20px;
   cursor: pointer;
+}
+
+
+
+/* Adaptação geral para telas pequenas */
+@media only screen and (max-width: 767px) {
+  
+
+  .head {
+    margin: 5%;
+  }
+
+  .header {
+    width: 100%;
+    margin: 0;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  nav {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  nav a {
+    margin: 5px;
+    font-size: 12px;
+  }
+
+  .conteiner {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dentro {
+    width: 100%;
+  }
+
+  .guiii {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .projects,
+  .formacoes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project,
+  .formacao {
+    width: 100%;
+  }
+
+  .modal-content {
+    max-width: 100%;
+    width: 90%;
+    background-image: none; /* Remova a imagem de fundo do modal para telas pequenas se necessário */
+  }
+
+  .close {
+    font-size: 16px;
+  }
+
+  section,
+  .formaca,
+  .contat,
+  footer {
+    width: 100%;
+  }
 }

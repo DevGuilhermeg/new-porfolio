@@ -6,10 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DevGUI: Meu Mundo FullStack</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
   <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
   
 </head>
 <body>
+
+    
     
   <header class="header">
   
@@ -23,9 +26,9 @@
         <a href="/">Home</a>
         <a id="projetos" href="#projetosSection">Projetos</a>
         <a id="contato" href="#contato">Contato</a>
-        <a href="#">Sobre-mim</a>
+        <a href="#">Biografia</a>
         <a href="login"><button>Login</button></a>
-        <a href="cadastro"><button>Cadastre-se</button></a>
+        <a href="cadastro"><button class="button-sign-in">Sign-in</button></a>
     </nav>
     
   </header>
@@ -65,7 +68,7 @@
             <div id="container"></div>
           </div>
           <div class="modal-buttons">
-            <button id="botaoAbrirProjeto1" style="display: none" onclick="abrirProjetoEspecifico()"><a href="https://api-usuarios-tvdy.onrender.com/pessoas" target="_blank">Abrir</a></button>
+            <button id="botaoAbrirProjeto1" style="display: none" onclick="abrirProjetoEspecifico()"><a href="https://api-usuarios-tvdy.onrender.com/pessoas" target="_blank">Ver mais</a></button>
             <button id="botaoCadastroProjeto1" style="display: none" onclick="cadastrarProjetoEspecifico()"><a href="cadastro">Cadastrar</a></button>
             <button id="botaoLoginProjeto1" style="display: none" onclick="loginProjetoEspecifico()"><a href="login">Login</a></button>
       
@@ -167,7 +170,9 @@
             <label for="mensagem">Mensagem:</label>
             <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
 
-            <button type="submit">Enviar</button>
+            <button type="submit">
+                Enviar   
+            </button>
         </form>
     </div>
 </section>
@@ -175,7 +180,9 @@
 <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 
 <footer>
-    <p>&copy; 2023 DevGUI. Todos os direitos reservados.</p>
+    <p>
+        &copy; 2023 DevGUI. Todos os direitos reservados.
+    </p>
 </footer>
 
 

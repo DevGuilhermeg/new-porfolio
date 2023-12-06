@@ -106,7 +106,7 @@ nav a:hover::after {
 
 .logo {
   font-family: 'Lobster', cursive;
-  font-size: 40px;
+  font-size: 60px;
   font-weight: bold;
   color: green;
   text-shadow: 0 0 10px rgba(42, 122, 42, 0.8);
@@ -491,9 +491,7 @@ footer {
     margin: 0;
   }
 
-  .logo {
-    font-size: 24px;
-  }
+ 
 
   nav {
     width: 100%;

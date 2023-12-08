@@ -16,7 +16,8 @@ Mastering CSS Layouts.
 JavaScript 5:
 
 JavaScript Moderno.
-Entre em Contato
+
+Entre em Contato.
 Para discussões, parcerias ou qualquer outra consulta, sinta-se à vontade para entrar em contato.
 
 Redes Sociais

@@ -1,4 +1,4 @@
-# README: Portfolio - Aplicação Flask com Formulário de Contato e Autenticação
+# README: Portfolio
 
 Este é um exemplo de um portfólio web construído com Flask, que inclui um formulário de contato e funcionalidade de autenticação básica.
 

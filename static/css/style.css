@@ -54,7 +54,7 @@ body{
 .headerr.fixed {
   position: fixed;
   top: 0;
-  background-color: #080808;
+  background-color: #333;
   z-index: 1000;
 }
 
@@ -146,9 +146,6 @@ h1{
     width: 90%;
     height: 100px;
     background-color: 50,192,193;
-    animation-name: anim11;
-    animation-duration: 7s;
-    animation-iteration-count: 1;
     margin: 5%;
 }
 
@@ -491,7 +488,9 @@ footer {
     margin: 0;
   }
 
- 
+ .logo-body{
+  display: none;
+ }
 
   nav {
     width: 100%;
@@ -537,8 +536,10 @@ footer {
     max-width: 100%;
     width: 90%;
     background-image: none; /* Remova a imagem de fundo do modal para telas pequenas se necessário */
+    background-image: url('../images/fundo.avif');
   }
-
+  
+  
   .close {
     font-size: 16px;
   }

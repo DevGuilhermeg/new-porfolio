@@ -3,25 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DevGUI: Meu Mundo Full Stack</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style-login.css') }}">
+  <title>DevGUI: Meu Mundo FullStack</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
 </head>
 <body>
     
   <header class="header">
-   <!-- <img class="logo" src="images/Dev.png" alt="">-->
+  
+    <section class="logo-body">
 
+        <a class="aa" href="/"><div class="logo">&lt;DevGUI&gt;</div></a>
 
+    </section>
 
-   <section class="logo-body">
-        
-        
-    <a class="aa" href="/"><div class="logo">&lt;DevGUI&gt;</div></a>
+    <nav class="headerr">
+        <a href="/">Home</a>
+        <a id="projetos" href="/#projetosSection">Projetos</a>
+        <a id="contato" href="/#contato">Contato</a>
+        <a href="login"><button class="button-sign-in">Login</button></a>
+        <a href="cadastro"><button>Sign-in</button></a>
+    </nav>
     
-    
-</section>
-
   </header>
 
   <section class="conteiner">
@@ -41,52 +44,20 @@
           </div>
         </form>
         <h4>Ou</h4>
-        <a href="cadastro"><button class="">Cadastre-se</button></a>
+        <a href="cadastro"><button class="">Sign-in</button></a>
       </div>      
     </div>
 
   </section>
+  <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 
-
-  <script>
-    document.getElementById('projetos').addEventListener('click', function () {
-        var projetosSection = document.getElementById('projetosSection');
-
-        if (projetosSection.style.display === 'none') {
-            // Se a seção estiver oculta, exibe e aguarda 100ms para garantir que seja renderizada
-            projetosSection.style.display = 'block';
-            setTimeout(function() {
-                projetosSection.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
-        } else {
-            // Se a seção estiver visível, rola suavemente até ela
-            projetosSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-    
-</script>
-<script>
-    document.getElementById('contato').addEventListener('click', function () {
-        var projetosSection = document.getElementById('mensagem');
-
-        if (projetosSection.style.display === 'none') {
-            // Se a seção estiver oculta, exibe e aguarda 100ms para garantir que seja renderizada
-            projetosSection.style.display = 'block';
-            setTimeout(function() {
-                projetosSection.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
-        } else {
-            // Se a seção estiver visível, rola suavemente até ela
-            projetosSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-    
-</script>
-<footer>
-    <p>&copy; 2023 DevGUI. Todos os direitos reservados.</p>
-</footer>
-
-
-
-</body>
-</html>
+  <footer>
+      <p>
+          &copy; 2023 DevGUI. Todos os direitos reservados.
+      </p>
+  </footer>
+  
+  
+  
+  </body>
+  </html>

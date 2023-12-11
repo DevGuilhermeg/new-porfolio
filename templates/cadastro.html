@@ -3,20 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DevGUI: Meu Mundo Full Stack</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style-cadastro.css') }}">
+  <title>DevGUI: Meu Mundo FullStack</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
 </head>
 <body>
     
   <header class="header">
+  
+    <section class="logo-body">
 
-    <section class="logo-body">        
-        
-      <a class="aa" href="/"><div class="logo">&lt;DevGUI&gt;</div></a>
-      
+        <a class="aa" href="/"><div class="logo">&lt;DevGUI&gt;</div></a>
+
     </section>
 
+    <nav class="headerr">
+        <a href="/">Home</a>
+        <a id="projetos" href="/#projetosSection">Projetos</a>
+        <a id="contato" href="/#contato">Contato</a>
+        <a href="login"><button>Login</button></a>
+        <a href="cadastro"><button class="button-sign-in">Sign-in</button></a>
+    </nav>
+    
   </header>
 
   <section class="conteiner">
@@ -61,7 +69,7 @@
         <div>
           <h4>Ou</h4>
           <br>
-          <a href="/"><button class="cad">Voltar</button></a>
+          <a href="/"><button class="cad">Cancelar</button></a>
         </div>
 
       </div>      
@@ -70,8 +78,8 @@
   </section>
 
   <footer>
-      <p>&copy; 2023 DevGUI. Todos os direitos reservados.</p>
+      <p>
+          &copy; 2023 DevGUI. Todos os direitos reservados.
+      </p>
   </footer>
-
-</body>
-</html>
+  

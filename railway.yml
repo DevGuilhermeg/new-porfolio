@@ -1,0 +1,6 @@
+version: 2
+services:
+  web:
+    env:
+      PORT: 8080
+    command: python app.py

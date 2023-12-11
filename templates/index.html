@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    
+    <form action=""></form>
     
   <header class="header">
   
@@ -41,7 +41,7 @@
         <div class="ff"><h1 class="text-item">{{nome}}</h1></div>
         <div>
             <br></br>
-            <p><h3>Desenvolvedor FullStack que encontra fascínio na complexidade dos códigos e na resolução de desafios. Estou animado para conversar contigo sobre como minha paixão pela programação e meu conjunto de habilidades podem contribuir de forma única para a equipe. Vamos explorar juntos!</h3></p>
+            <p><h3>Desenvolvedor web que encontra fascínio na complexidade dos códigos e na resolução de desafios. Estou animado para conversar contigo sobre como minha paixão pela programação e meu conjunto de habilidades podem contribuir de forma única para a equipe. Vamos explorar juntos!</h3></p>
         </div>
 
         <div class="links">
@@ -67,24 +67,23 @@
             <div id="container"></div>
           </div>
           <div class="modal-buttons">
-            <button id="botaoAbrirProjeto1" style="display: none" onclick="abrirProjetoEspecifico()"><a href="https://api-usuarios-tvdy.onrender.com/pessoas" target="_blank">
+
+            <button id="botaoAbrirProjeto1"  onclick="abrirProjetoEspecifico()"><a href="https://api-usuarios-tvdy.onrender.com/pessoas" target="_blank">
                 Abrir
             </a></button>
-            <button id="botaoCadastroProjeto1" style="display: none" onclick="cadastrarProjetoEspecifico()"><a href="cadastro">Cadastrar</a></button>
-            <button id="botaoLoginProjeto1" style="display: none" onclick="loginProjetoEspecifico()"><a href="login">Login</a></button>
+            <button id="botaoCadastroProjeto1"  onclick="cadastrarProjetoEspecifico()"><a href="cadastro">Cadastrar</a></button>
+            <button id="botaoLoginProjeto1"  onclick="loginProjetoEspecifico()"><a href="login">Login</a></button>
       
-            <button id="botaoProjeto2" style="display: none" onclick="abrirProjetoEspecifico()">Abrir</button>
-            <button id="botaoCadastroProjeto2" style="display: none" onclick="cadastrarProjetoEspecifico()">Cadastrar</button>
-            <button id="botaoLoginProjeto2" style="display: none" onclick="loginProjetoEspecifico()">Login</button>
+            <button id="botaoAbrirProjeto2"  onclick="abrirProjetoEspecifico()"><a href="https://google.com">Abrir</a> </button>
       
-            <button id="botaoProjeto3" style="display: none" onclick="abrirProjetoEspecifico()">Abrir</button>
-            <button id="botaoCadastroProjeto3" style="display: none" onclick="cadastrarProjetoEspecifico()">Cadastrar</button>
-            <button id="botaoLoginProjeto3" style="display: none" onclick="loginProjetoEspecifico()">Login</button>
+            <button id="botaoProjeto3"  onclick="abrirProjetoEspecifico()">Abrir</button>
+            <button id="botaoCadastroProjeto3"  onclick="cadastrarProjetoEspecifico()">Cadastrar</button>
+            <button id="botaoLoginProjeto3"  onclick="loginProjetoEspecifico()">Login</button>
           </div> 
         </div>
       </div>
       
-    <h2>Nossos Projetos</h2>
+    <h2>Meus Projetos</h2>
     <div class="projects">
 
         <div class="project">
@@ -105,11 +104,23 @@
         </div>
 
         <div class="project">
-            <img src="{{ url_for('static', filename='images/em-breve.jfif') }}" alt="Projeto 2">
+            <img src="{{ url_for('static', filename='images/Encurtador.png') }}" alt="Projeto 2">
             <div class="project-info">
-                <h3>Projeto 2</h3>
-                <p><h5>Em breve novos projetos</h5></p>
+                <h3>Encurtador de links</h3>
+                <br>
+                <p><h5>Encurtador de links usando Python, html e css</h5></p>
+                <br>
+                <div>
+                    <a href="https://github.com/DevGuilhermeg/encurtador-de-link" target="_blank"><button>GitHub</button></a>
+                    <button id="openModalBtn">
+                        <a href="https://encurtador-de-link-production.up.railway.app/" target="_blank">
+                            Abrir
+                        </a>                        
+                    </button>
+                    
+                </div>
             </div>
+            
         </div>
 
         <div class="project">
@@ -118,6 +129,7 @@
               <h3>Projeto 3</h3>
               <p><h5>Em breve novos projetos</h5></p>
           </div>
+        
       </div>
         
     </div>
